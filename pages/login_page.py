@@ -1,4 +1,5 @@
 from .base_page import BasePage
+from .locators import LoginPageLocators
 #from selenium.common.exceptions import NoSuchElementException
 
 class LoginPage(BasePage):
@@ -9,8 +10,10 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         # реализуйте проверку на корректный url адрес
-        login_link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
-        assert self.current_url(BasePage.url) == login_link, "Url is not corrected"
+        name_in_link = "accounts/login/"
+        print(self.browser.current_url)
+        assert name_in_link in self.browser.current_url, print(self.browser.current_url)
+        #assert self.current_url(BasePage.url) == login_link, "Url is not corrected"
 
     def should_be_login_form(self):
         # реализуйте проверку, что есть форма логина
