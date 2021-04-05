@@ -18,3 +18,4 @@ class ProductPageLocators():
     PRODUCT_COST = (By.CSS_SELECTOR, ".product_main .price_color")
     BASKET_PRODUCT_NAMES = (By.CSS_SELECTOR, ".alertinner strong")
     BASKET_TOTAL = (By.CSS_SELECTOR, ".alertinner p strong")
+    SUCCESS_MESSAGES = (By.CSS_SELECTOR, ".alertinner strong")
