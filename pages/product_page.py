@@ -4,7 +4,7 @@ from time import sleep
 
 
 class ProductPage(BasePage):
-    def should_be_add_product_in_busket(self):
+    def should_be_add_product_in_basket(self):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BUSKET), "Add to basket button isn't presented"
 
     def should_be_product_name(self):
