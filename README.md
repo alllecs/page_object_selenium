@@ -1,2 +1,2 @@
 # page_object_selenium
-Example for page object model
+My first pytest progect with page model object
