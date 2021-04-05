@@ -26,3 +26,4 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.should_be_basket_total_cost()
     page.name_product_in_basket_equal_name_product()
     page.price_product_equal_basket_total_cost()
+    page.should_be_success_message()
