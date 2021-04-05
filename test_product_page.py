@@ -27,3 +27,13 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.name_product_in_basket_equal_name_product()
     page.price_product_equal_basket_total_cost()
     page.should_be_success_message()
+
+
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_be_add_product_in_basket()
+    page.press_add_product_in_basket()
+    page.solve_quiz_and_get_code()
+    page.should_not_be_success_message()
