@@ -1,8 +1,20 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
 #from selenium.common.exceptions import NoSuchElementException
+from time import sleep
 
 class LoginPage(BasePage):
+    def register_new_user(self, email, password):
+        reg_email = self.browser.find_element(*LoginPageLocators.REG_EMAIL)
+        reg_email.send_keys(email)
+        reg_pass1 = self.browser.find_element(*LoginPageLocators.REG_PASSWORD)
+        reg_pass1.send_keys(password)
+        reg_pass2 = self.browser.find_element(*LoginPageLocators.REG_REPEAT_PAS)
+        reg_pass2.send_keys(password)
+        sleep(1)
+        reg_button = self.browser.find_element(*LoginPageLocators.REG_BTN)
+        reg_button.click()
+
     def should_be_login_page(self):
         self.should_be_login_url()
         self.should_be_login_form()
